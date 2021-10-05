@@ -439,26 +439,9 @@ int
 mouseaction(XEvent *e, uint release)
 {
 	MouseShortcut *ms;
-	MouseKey *mk;
 
-<<<<<<<
 	/* ignore Button<N>mask for Button<N> - it's set on release */
 	uint state = e->xbutton.state & ~buttonmask(e->xbutton.button);
-=======
-		}
-	}
-
-	for (mk = mkeys; mk < mkeys + mkeyslen; mk++) {
-		if (e->xbutton.button == mk->b
-				&& match(mk->mask, e->xbutton.state)) {
-			mk->func(&mk->arg);
-			return;
-		}
-	}
-
-	if (e->xbutton.button == Button1) {
-		clock_gettime(CLOCK_MONOTONIC, &now);
->>>>>>>
 
 	for (ms = mshortcuts; ms < mshortcuts + LEN(mshortcuts); ms++) {
 		if (ms->release == release &&
