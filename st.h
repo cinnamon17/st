@@ -77,26 +77,10 @@ typedef union {
 	const char *s;
 } Arg;
 
-<<<<<<<
-=======
-typedef struct {
-	uint b;
-	uint mask;
-	void (*func)(const Arg *);
-	const Arg arg;
-} MouseKey;
-
-typedef struct {
-	uint mod;
-	KeySym keysym;
-	void (*func)(const Arg *);
->>>>>>>
 void die(const char *, ...);
 void redraw(void);
 void draw(void);
 
-void kscrolldown(const Arg *);
-void kscrollup(const Arg *);
 void printscreen(const Arg *);
 void printsel(const Arg *);
 void sendbreak(const Arg *);
@@ -139,14 +123,3 @@ extern char *termname;
 extern unsigned int tabspaces;
 extern unsigned int defaultfg;
 extern unsigned int defaultbg;
-<<<<<<<
-=======
-extern unsigned int defaultattr;
-extern MouseShortcut mshortcuts[];
-extern size_t mshortcutslen;
-extern MouseKey mkeys[];
-extern size_t mkeyslen;
-extern Shortcut shortcuts[];
-extern size_t shortcutslen;
-extern uint forceselmod;
->>>>>>>
